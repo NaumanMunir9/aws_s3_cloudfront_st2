@@ -25,7 +25,6 @@ export class Step02HelloWebsiteStack extends cdk.Stack {
     new s3deploy.BucketDeployment(this, "DeployWebsite", {
       sources: [s3deploy.Source.asset("./website-dist")],
       destinationBucket: websiteBucket,
-      destinationKeyPrefix: "web/static", // optional prefix in destination bucket
       distribution,
     });
   }
